@@ -1,4 +1,4 @@
-body {
+* {
 	margin: 0;
 	padding: 0;
 }
@@ -135,4 +135,36 @@ ul,li {
 }
 .step3 img {
 	width: 100%;
+}
+/*编辑图片*/
+.cut {
+	width: 100%;
+	height: 20rem;
+	margin: .5rem auto;
+}
+.test-button {
+	display: flex;
+	flex-wrap: wrap;
+}
+.btn {
+	display: inline-block;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #c0ccda;
+	color: #1f2d3d;
+	text-align: center;
+	box-sizing: border-box;
+	outline: none;
+	margin: .4rem .5rem;
+	padding: .3rem .5rem;
+	font-size: .7rem;
+	border-radius: .2rem;
+	color: #fff;
+	background-color: #50bfff;
+	border-color: #50bfff;
+	transition: all .2s ease;
+	text-decoration: none;
+	user-select: none;
 }

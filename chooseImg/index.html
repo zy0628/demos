@@ -5,9 +5,8 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>图片上传、编辑、合成</title>
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/cropTest.css">
 </head>
 <body>
 	<div id="app">
@@ -34,18 +33,15 @@
 		<!--裁切-->
 		<div class="step2" v-show="showCrop">
 			<div class="cut">
-				<vue-cropper ref="cropper" :img="option.img" :output-type="option.outputType" :info="true" :fixed="option.fixed" :fixedNumber="option.fixedNumber" :original="option.original" :auto-crop="option.autoCrop" :auto-crop-width="option.autoCropWidth" :auto-crop-height="option.autoCropHeight" :center-box="option.centerBox" @real-time="realTime" :high="option.high">
+				<vue-cropper ref="cropper" :img="option.img" :output-type="option.outputType" :info="true" :fixed="option.fixed" :fixedNumber="option.fixedNumber" :original="option.original" :auto-crop="option.autoCrop" :auto-crop-width="option.autoCropWidth" :auto-crop-height="option.autoCropHeight" :center-box="option.centerBox" :high="option.high">
 				</vue-cropper>
 			</div>
 			<div class="test-button">
-				<div>
+				<div class="choose">
 					<label class="btn" for="upload1">上传图片</label>
 					<input type="file" id="upload1" style="position:absolute; clip:rect(0 0 0 0);" accept="image/*"
 					       @change="uploadImg($event, 1)">
 				</div>
-				<!--<div v-if="!isIos">
-					<button class="btn" @click="showBtmChoose = true">上传图片</button>
-				</div>-->
 				<button @click="refreshCrop" class="btn">重置</button>
 				<button @click="changeScale(1)" class="btn">+</button>
 				<button @click="changeScale(-1)" class="btn">-</button>
@@ -53,13 +49,8 @@
 				<button @click="rotateRight" class="btn">右旋转</button>
 				<a @click="down('base64')" class="btn">完成</a>
 			</div>
-			<div class="show-preview" :style="{'width': previews.w + 'px', 'height': previews.h + 'px',  'overflow': 'hidden', 'margin': '5px'}">
-				<div :style="previews.div">
-					<img :src="previews.url" :style="previews.img">
-				</div>
-			</div>
-			<!--安卓时，底部弹窗-->
-			<div class="btm-choose" v-show="showBtmChoose">
+			<!--自定义弹窗：在安卓系统下，点击“上传图片”，没有拍照功能时，和ios区分处理。安卓点击上传图片，弹出下面的自定义弹窗-->
+			<!--<div class="btm-choose" v-show="showBtmChoose">
 				<ul>
 					<li>
 						<label class="btn" for="upload2">拍照</label>
@@ -70,12 +61,13 @@
 						<input type="file" id="upload3" style="position:absolute; clip:rect(0 0 0 0);" accept="image/*" @change="uploadImg($event, 1)"></li>
 					<li @click="showBtmChoose = false">取消</li>
 				</ul>
-			</div>
+			</div>-->
 		</div>
 		<!--预览、删除-->
 		<div class="preview-box" v-show="showPreview">
 			<img :src="previewUrl" alt="">
 		</div>
+		<!--要合成其中的logo-->
 		<img src="img/logo.png" alt="" ref="logoImg" style="opacity: 0">
 	</div>
 
