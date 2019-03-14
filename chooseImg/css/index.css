@@ -1,0 +1,138 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.common-head {
+	position: relative;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+	background-color: #fff;
+}
+.common-head > i:nth-of-type(1) {
+	position: absolute;
+	left: 0;
+	top: 0.4rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../img/arrow.png) no-repeat 0 0/100% 100%;
+}
+.common-head > i:nth-of-type(2) {
+	position: absolute;
+	right: 0.4rem;
+	top: 0.4rem;
+	width: 1.3rem;
+	height: 1.3rem;
+	background: url(../img/delete.png) no-repeat 0 0/100% 100%;
+}
+.common-head > h3 {
+	color: #666;
+	font-size: .7rem;
+}
+.upload-box {
+	padding: .25rem;
+}
+.upload-box > ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+.upload-box > ul > li {
+	margin: .25rem;
+	width: 3.37rem;
+	height: 3.37rem;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+.upload-box > ul > li > img {
+	width: 100%;
+	height: 100%;
+}
+.upload-box .add {
+	margin: .2rem;
+	position: relative;
+	width: 3.5rem;
+	height: 3.5rem;
+	border: 1px solid #ccc;
+	background: url(http://glastudio.top/test/upload.png) no-repeat 0 0/100% 100%;
+}
+.upload-box .add > input {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 2;
+}
+.btm-choose {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+}
+.btm-choose > ul {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	background-color: #fff;
+}
+.btm-choose > ul > li {
+	position: relative;
+	height: 2.5rem;
+	color: deepskyblue;
+	font-size: .7rem;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+.btm-choose > ul > li:nth-of-type(3) {
+	line-height: 2.5rem;
+	color: #666;
+}
+.btm-choose > ul > li > label {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 2.5rem;
+	color: deepskyblue;
+	font-size: .7rem;
+	border: none;
+	background: none;
+}
+.btm-choose > ul > li > input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 2;
+}
+.compose-btn {
+	display: block;
+	margin: 1.5rem auto 0 auto;
+	width: 15rem;
+	height: 1.8rem;
+	color: #fff;
+	font-size: .65rem;
+	border: none;
+	border-radius: .2rem;
+	background-color: deepskyblue;
+}
+.step3 {
+	width: 95%;
+	margin: 1rem auto;
+}
+.step3 img {
+	width: 100%;
+}
